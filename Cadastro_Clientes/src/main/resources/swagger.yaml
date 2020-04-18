@@ -1,0 +1,257 @@
+swagger: '2.0'
+info:
+  description: Microserviço responsável pelo cadastro de contas cartão de clientes
+  version: 1.0.0
+  title: Microservico Cadastro Clientes
+  license:
+    name: Apache 2.0
+    url: 'http://www.apache.org/licenses/LICENSE-2.0.html'
+host: localhost:8080
+basePath: /cadastro-cliente-api/v1
+tags:
+  - name: Cliente
+    description: Operações relacionadas ao cadastro de clientes
+  - name: Solicitacao
+    description: Operações de consulta das solicitações de cadastro de contas cartão feitas por clientes
+schemes:
+  - http
+paths:
+  /clientes:
+    put:
+      tags:
+        - Cliente
+      summary: Cria ou edita os dados de cadastro de um cliente, criando tambem uma nova solicitação
+      operationId: salvaCliente
+      consumes:
+        - "application/json"
+      parameters:
+        - in: body
+          name: machine
+          description: "Dados necessários para realizar o cadastro de um cliente"
+          required: true
+          schema:
+            $ref: '#/definitions/ClienteRequest'
+      responses:
+        '200':
+          description: Cliente cadastrado com sucesso
+        '500':
+          description: Erro Interno ao Cadastrar Cliente
+        '400':
+          description: Request Inválida
+
+    get:
+      tags:
+        - Cliente
+      summary: Obtem os dados de cadastro e solicitações de um Cliente
+      operationId: obtemDadosCliente
+      produces:
+        - "application/json"
+      parameters:
+        - name: "cpf_cnpj"
+          in: "header"
+          description: "CPF/CNPJ do Cliente"
+          required: true
+          type: "string"
+      responses:
+        '200':
+          description: "Sucesso ao pesquisar dados do Cliente"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/ClienteResponse"
+        '500':
+          description: Erro Interno ao Cadastrar Cliente
+        '400':
+          description: Request Inválida
+        '404':
+          description: Não foi possível encontrar os dados do Cliente
+
+    patch:
+      tags:
+        - Cliente
+      summary: Faz atualização do status do cadastro do Cliente
+      operationId: atualizaStatusCliente
+      produces:
+        - "application/json"
+      parameters:
+        - name: "cpf_cnpj"
+          in: "header"
+          description: "CPF/CNPJ do Cliente"
+          required: true
+          type: "string"
+
+        - name: "status"
+          in: "header"
+          description: "Status do cadastro do Cliente"
+          required: true
+          schema:
+            $ref: '#/definitions/StatusCriacaoConta'
+      responses:
+        '204':
+          description: "Status do Cadastro da Conta Cartão do Cliente atualizado com Sucesso"
+        '500':
+          description: Erro Interno ao Atualizar Status do Cadastro da Conta Cartão do Cliente
+        '400':
+          description: Request Inválida
+        '404':
+          description: Nao foi possível encontrar os dados do Cliente
+
+  /solicitacoes:
+    patch:
+      tags:
+        - Solicitacao
+      summary: Faz atualização do status da Solicitação de cadastro do Cliente
+      operationId: atualizaStatusSolicitacaoCliente
+      produces:
+        - "application/json"
+      parameters:
+        - name: "cpf_cnpj"
+          in: "header"
+          description: "CPF/CNPJ do Cliente"
+          required: true
+          type: "string"
+
+        - name: "status"
+          in: "header"
+          description: "Status da Solicitação de cadastro do Cliente"
+          required: true
+          schema:
+            $ref: '#/definitions/StatusSolicitacao'
+      responses:
+        '204':
+          description: "Status da Solicitação de Cadastro do Cliente atualizado com Sucesso"
+        '500':
+          description: Erro Interno ao Atualizar Status da Solicitação de Cadastro do Cliente
+        '400':
+          description: Request Inválida
+        '404':
+          description: Nao foi possível encontrar os dados do Cliente
+
+definitions:
+  ClienteRequest:
+    type: object
+    required:
+      - nome
+      - cpf_cnpj
+      - numero_rg
+      - cidade
+      - estado
+      - pais
+      - link_s3_imagem_rg
+      - link_s3_imagem_cpf_cnpj
+    properties:
+      nome:
+        type: string
+        description: Nome Completo do Cliente
+        minLength: 1
+      cpf_cnpj:
+        type: string
+        description: CPF/CNPJ do Cliente
+        minLength: 11
+        maxLength: 14
+      numero_rg:
+        type: string
+        description: Número do RG do Cliente
+        minLength: 1
+      cidade:
+        type: string
+        description: Cidade do Cliente
+        minLength: 1
+      estado:
+        type: string
+        description: Estado do Cliente
+        minLength: 1
+      pais:
+        type: string
+        description: País do Cliente
+        minLength: 1
+      latitude:
+        type: number
+        format: double
+        description: Latitude do Cliente no momento da solicitação
+      longitude:
+        type: number
+        format: double
+        description: Longitude do Cliente no momento da solicitação
+      link_s3_imagem_rg:
+        type: string
+        description: Link assinado do S3 com a imagem do RG do Cliente
+        minLength: 1
+      link_s3_imagem_cpf_cnpj:
+        type: string
+        description: Link assinado do S3 com a imagem do CPF do Cliente
+        minLength: 1
+
+  ClienteResponse:
+    type: object
+    properties:
+      nome:
+        type: string
+        description: Nome Completo do Cliente
+      cpf_cnpj:
+        type: string
+        description: CPF/CNPJ do Cliente
+      numero_rg:
+        type: string
+        description: Número do RG do Cliente
+      conta_cartao:
+        type: string
+        description: Conta Cartão do Cliente
+      cidade:
+        type: string
+        description: Cidade do Cliente
+      estado:
+        type: string
+        description: Estado do Cliente
+      pais:
+        type: string
+        description: País do Cliente
+      solicitacoes:
+        type: array
+        description: Lista de Solicitações de Cadastro do Cliente
+        items:
+          $ref: '#/definitions/SolicitacaoCadastroResponse'
+
+  SolicitacaoCadastroResponse:
+    type: object
+    properties:
+      data_criacao:
+        type: string
+        description: Data de Criação da Solicitação
+        minLength: 1
+      status_solicitacao:
+        type: string
+        description: Status da Solicitação
+        minLength: 1
+      latitude:
+        type: number
+        format: double
+        description: Latitude do Cliente no momento da solicitação
+      longitude:
+        type: number
+        format: double
+        description: Longitude do Cliente no momento da solicitação
+      link_s3_imagem_rg:
+        type: string
+        description: Link assinado do S3 com a imagem do RG do Cliente
+        minLength: 1
+      link_s3_imagem_cpf_cnpj:
+        type: string
+        description: Link assinado do S3 com a imagem do CPF do Cliente
+        minLength: 1
+
+  StatusCriacaoConta:
+    type: string
+    enum:
+      - CRIADA
+      - ANALISE_PENDENTE
+      - REJEITADA
+
+  StatusSolicitacao:
+    type: string
+    enum:
+      - APROVADA
+      - REPROVADA
+      - EM_ANALISE_DOCUMENTOS
+      - EM_ANALISE_FRAUDE
+      - EM_ANALISE_CREDITO
