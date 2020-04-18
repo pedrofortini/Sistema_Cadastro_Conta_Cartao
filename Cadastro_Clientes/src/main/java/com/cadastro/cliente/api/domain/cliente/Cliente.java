@@ -18,6 +18,10 @@ public class Cliente implements Serializable {
     @NotNull
     private String cpfCnpj;
 
+    @Column(name="nome")
+    @NotNull
+    private String nome;
+
     @Column(name="numero_rg")
     @NotNull
     private String numeroRG;
@@ -42,6 +46,18 @@ public class Cliente implements Serializable {
     @Column(name="conta_cartao")
     private String contaCartao;
 
+    @Transient
+    private String nomeImagemRg;
+
+    @Transient
+    private String nomeImagemCpfCnpj;
+
+    @Transient
+    private Double latitude;
+
+    @Transient
+    private Double longitude;
+
 
     public String getCpfCnpj() {
         return cpfCnpj;
@@ -49,6 +65,14 @@ public class Cliente implements Serializable {
 
     public void setCpfCnpj(String cpfCnpj) {
         this.cpfCnpj = cpfCnpj;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
     public String getNumeroRG() {
@@ -97,5 +121,37 @@ public class Cliente implements Serializable {
 
     public void setContaCartao(String contaCartao) {
         this.contaCartao = contaCartao;
+    }
+
+    public String getNomeImagemRg() {
+        return nomeImagemRg;
+    }
+
+    public void setNomeImagemRg(String nomeImagemRg) {
+        this.nomeImagemRg = nomeImagemRg;
+    }
+
+    public String getNomeImagemCpfCnpj() {
+        return nomeImagemCpfCnpj;
+    }
+
+    public void setNomeImagemCpfCnpj(String nomeImagemCpfCnpj) {
+        this.nomeImagemCpfCnpj = nomeImagemCpfCnpj;
+    }
+
+    public Double getLatitude() {
+        return latitude;
+    }
+
+    public void setLatitude(Double latitude) {
+        this.latitude = latitude;
+    }
+
+    public Double getLongitude() {
+        return longitude;
+    }
+
+    public void setLongitude(Double longitude) {
+        this.longitude = longitude;
     }
 }

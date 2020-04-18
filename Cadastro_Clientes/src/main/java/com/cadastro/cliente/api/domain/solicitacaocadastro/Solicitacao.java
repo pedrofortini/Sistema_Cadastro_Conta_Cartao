@@ -25,10 +25,10 @@ public class Solicitacao {
     @NotNull
     private Cliente cliente;
 
-    @Column(name="time_stamp")
+    @Column(name="data_criacao")
     @Temporal(TemporalType.TIMESTAMP)
     @NotNull
-    private Date timeStamp;
+    private Date dataCriacao;
 
     @Column(name="status_conta_conta")
     @Enumerated(EnumType.STRING)
@@ -36,20 +36,18 @@ public class Solicitacao {
     private StatusSolicitacao status;
 
     @Column(name="latitude")
-    @NotNull
     private Double latitude;
 
     @Column(name="longitude")
-    @NotNull
     private Double longitude;
 
-    @Column(name="link_s3_imagem_rg")
+    @Column(name="nome_imagem_rg")
     @NotNull
-    private String linkS3ImagemRg;
+    private String nomeImagemRg;
 
-    @Column(name="link_s3_imagem_cpf")
+    @Column(name="nome_imagem_cpf_cnpj")
     @NotNull
-    private String linkS3ImagemCpf;
+    private String nomeImagemCpfCnpj;
 
 
     public Long getId() {
@@ -68,12 +66,12 @@ public class Solicitacao {
         this.cliente = cliente;
     }
 
-    public Date getTimeStamp() {
-        return timeStamp;
+    public Date getDataCriacao() {
+        return dataCriacao;
     }
 
-    public void setTimeStamp(Date timeStamp) {
-        this.timeStamp = timeStamp;
+    public void setDataCriacao(Date dataCriacao) {
+        this.dataCriacao = dataCriacao;
     }
 
     public StatusSolicitacao getStatus() {
@@ -100,19 +98,19 @@ public class Solicitacao {
         this.longitude = longitude;
     }
 
-    public String getLinkS3ImagemRg() {
-        return linkS3ImagemRg;
+    public String getNomeImagemRg() {
+        return nomeImagemRg;
     }
 
-    public void setLinkS3ImagemRg(String linkS3ImagemRg) {
-        this.linkS3ImagemRg = linkS3ImagemRg;
+    public void setNomeImagemRg(String nomeImagemRg) {
+        this.nomeImagemRg = nomeImagemRg;
     }
 
-    public String getLinkS3ImagemCpf() {
-        return linkS3ImagemCpf;
+    public String getNomeImagemCpfCnpj() {
+        return nomeImagemCpfCnpj;
     }
 
-    public void setLinkS3ImagemCpf(String linkS3ImagemCpf) {
-        this.linkS3ImagemCpf = linkS3ImagemCpf;
+    public void setNomeImagemCpfCnpj(String nomeImagemCpfCnpj) {
+        this.nomeImagemCpfCnpj = nomeImagemCpfCnpj;
     }
 }

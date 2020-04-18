@@ -1,8 +1,7 @@
 package com.cadastro.cliente.api.application.handler;
 
-import com.cadastro.cliente.api.application.exception.ResourceAlreadyExistsException;
-import com.cadastro.cliente.api.application.exception.ResourceNotFoundException;
-import com.cadastro.cliente.api.application.exception.UnprocessableEnityException;
+import com.cadastro.cliente.api.application.exception.RecursoNaoEncontradoException;
+import com.cadastro.cliente.api.application.exception.UnprocessableEntityException;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.cadastro.cliente.api.application.exception.PersistenceException;
@@ -40,18 +39,8 @@ public class ApiExceptionHandlerAdvice extends ResponseEntityExceptionHandler {
                 .body(gsonBuilder.toJson(exception.getMessage()));
     }
 
-    @ExceptionHandler(ResourceAlreadyExistsException.class)
-    public ResponseEntity<?> handleResourceAlreadyExistsException(ResourceAlreadyExistsException exception) {
-
-        Gson gsonBuilder = new GsonBuilder().create();
-
-        return ResponseEntity.status(HttpStatus.CONFLICT)
-                .contentType(MediaType.APPLICATION_JSON_UTF8)
-                .body(gsonBuilder.toJson(exception.getMessage()));
-    }
-
-    @ExceptionHandler(ResourceNotFoundException.class)
-    public ResponseEntity<?> handleResourceNotFoundException(ResourceNotFoundException exception) {
+    @ExceptionHandler(RecursoNaoEncontradoException.class)
+    public ResponseEntity<?> handleResourceNotFoundException(RecursoNaoEncontradoException exception) {
 
         Gson gsonBuilder = new GsonBuilder().create();
 
@@ -60,8 +49,8 @@ public class ApiExceptionHandlerAdvice extends ResponseEntityExceptionHandler {
                 .body(gsonBuilder.toJson(exception.getMessage()));
     }
 
-    @ExceptionHandler(UnprocessableEnityException.class)
-    public ResponseEntity<?> handleUnprocessableEnityException(UnprocessableEnityException exception) {
+    @ExceptionHandler(UnprocessableEntityException.class)
+    public ResponseEntity<?> handleUnprocessableEnityException(UnprocessableEntityException exception) {
 
         Gson gsonBuilder = new GsonBuilder().create();
 
