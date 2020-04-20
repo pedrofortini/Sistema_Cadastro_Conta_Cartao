@@ -1,0 +1,17 @@
+/home/pedrofortini/Desafios/Itau/Sistema_Cadastro_Conta_Cartao/Analise_Documentos/src/main/java/com/analise/documentos/module/domain/mensagemcomunicacao/MensagemComunicacaoConverter.java
+/home/pedrofortini/Desafios/Itau/Sistema_Cadastro_Conta_Cartao/Analise_Documentos/src/main/java/com/analise/documentos/module/domain/mensagemanalisefraude/MensagemAnaliseFraude.java
+/home/pedrofortini/Desafios/Itau/Sistema_Cadastro_Conta_Cartao/Analise_Documentos/src/main/java/com/analise/documentos/module/infrastructure/mensageria/KafkaService.java
+/home/pedrofortini/Desafios/Itau/Sistema_Cadastro_Conta_Cartao/Analise_Documentos/src/main/java/com/analise/documentos/module/domain/mensagemanalisedocumentos/StatusSolicitacao.java
+/home/pedrofortini/Desafios/Itau/Sistema_Cadastro_Conta_Cartao/Analise_Documentos/src/main/java/com/analise/documentos/module/infrastructure/clientesrest/CadastroClienteApiClient.java
+/home/pedrofortini/Desafios/Itau/Sistema_Cadastro_Conta_Cartao/Analise_Documentos/src/main/java/com/analise/documentos/module/domain/mensagemcomunicacao/MensagemComunicacao.java
+/home/pedrofortini/Desafios/Itau/Sistema_Cadastro_Conta_Cartao/Analise_Documentos/src/main/java/com/analise/documentos/module/domain/mensagemanalisedocumentos/AnaliseDocumentosService.java
+/home/pedrofortini/Desafios/Itau/Sistema_Cadastro_Conta_Cartao/Analise_Documentos/src/main/java/com/analise/documentos/module/domain/mensagemcomunicacao/TipoComunicacao.java
+/home/pedrofortini/Desafios/Itau/Sistema_Cadastro_Conta_Cartao/Analise_Documentos/src/main/java/com/analise/documentos/module/domain/mensagemanalisefraude/MensagemAnaliseFraudeConverter.java
+/home/pedrofortini/Desafios/Itau/Sistema_Cadastro_Conta_Cartao/Analise_Documentos/src/main/java/com/analise/documentos/module/infrastructure/mensageria/KafkaJsonDeserializer.java
+/home/pedrofortini/Desafios/Itau/Sistema_Cadastro_Conta_Cartao/Analise_Documentos/src/main/java/com/analise/documentos/module/domain/mensagemanalisedocumentos/MensagemAnaliseDocumentosCliente.java
+/home/pedrofortini/Desafios/Itau/Sistema_Cadastro_Conta_Cartao/Analise_Documentos/src/main/java/com/analise/documentos/module/application/ServiceConstants.java
+/home/pedrofortini/Desafios/Itau/Sistema_Cadastro_Conta_Cartao/Analise_Documentos/src/main/java/com/analise/documentos/module/domain/mensagemanalisedocumentos/StatusContaCartao.java
+/home/pedrofortini/Desafios/Itau/Sistema_Cadastro_Conta_Cartao/Analise_Documentos/src/main/java/com/analise/documentos/module/AnaliseDocumentosApplication.java
+/home/pedrofortini/Desafios/Itau/Sistema_Cadastro_Conta_Cartao/Analise_Documentos/src/main/java/com/analise/documentos/module/application/factories/DependencyFactory.java
+/home/pedrofortini/Desafios/Itau/Sistema_Cadastro_Conta_Cartao/Analise_Documentos/src/main/java/com/analise/documentos/module/application/MessageConstants.java
+/home/pedrofortini/Desafios/Itau/Sistema_Cadastro_Conta_Cartao/Analise_Documentos/src/main/java/com/analise/documentos/module/infrastructure/mensageria/KafkaJsonSerializer.java

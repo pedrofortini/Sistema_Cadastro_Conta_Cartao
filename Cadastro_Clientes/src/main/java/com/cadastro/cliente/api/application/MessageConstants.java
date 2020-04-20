@@ -8,5 +8,4 @@ public interface MessageConstants {
     String MENSAGEM_ERRO_AO_PERSISTIR_DADO_CLIENTE = "Erro ao persistir dados do Cliente de CPF/CNPJ %s";
     String MENSAGEM_ERRO_AO_PERSISTIR_SOLICITACAO_CADASTRO_CLIENTE = "Erro ao persistir dados da Solicitaçao de Cadastro do Cliente de CPF/CNPJ %s";
     String MENSAGEM_DATA_FORMATO_INVALIDO = "Erro ao processar data %s";
-
 }

@@ -1,0 +1,15 @@
+/home/pedrofortini/Desafios/Itau/Sistema_Cadastro_Conta_Cartao/Cadastro_Clientes/src/test/java/com/cadastro/cliente/api/domain/cliente/converter/ClienteResponseConverterTest.java
+/home/pedrofortini/Desafios/Itau/Sistema_Cadastro_Conta_Cartao/Cadastro_Clientes/src/test/java/com/cadastro/cliente/api/domain/cliente/ClienteServiceTest.java
+/home/pedrofortini/Desafios/Itau/Sistema_Cadastro_Conta_Cartao/Cadastro_Clientes/src/test/java/com/cadastro/cliente/api/domain/cliente/fixture/ClienteFixture.java
+/home/pedrofortini/Desafios/Itau/Sistema_Cadastro_Conta_Cartao/Cadastro_Clientes/src/test/java/com/cadastro/cliente/api/domain/solicitacaocadastro/SolicitacaoCadastroServiceTest.java
+/home/pedrofortini/Desafios/Itau/Sistema_Cadastro_Conta_Cartao/Cadastro_Clientes/src/test/java/com/cadastro/cliente/api/domain/mensagemsolicitacao/converter/MensagemSolicitacaoCadastroClienteConverterTest.java
+/home/pedrofortini/Desafios/Itau/Sistema_Cadastro_Conta_Cartao/Cadastro_Clientes/src/test/java/com/cadastro/cliente/api/infrastructure/mensageria/KafkaJsonSerializerTest.java
+/home/pedrofortini/Desafios/Itau/Sistema_Cadastro_Conta_Cartao/Cadastro_Clientes/src/test/java/com/cadastro/cliente/api/domain/solicitacaocadastro/converter/SolicitacaoCadastroResponseConverterTest.java
+/home/pedrofortini/Desafios/Itau/Sistema_Cadastro_Conta_Cartao/Cadastro_Clientes/src/test/java/com/cadastro/cliente/api/infrastructure/mensageria/KafkaServiceTest.java
+/home/pedrofortini/Desafios/Itau/Sistema_Cadastro_Conta_Cartao/Cadastro_Clientes/src/test/java/com/cadastro/cliente/api/application/controllers/ClienteControllerTest.java
+/home/pedrofortini/Desafios/Itau/Sistema_Cadastro_Conta_Cartao/Cadastro_Clientes/src/test/java/com/cadastro/cliente/api/domain/cliente/fixture/SolicitacaoFixture.java
+/home/pedrofortini/Desafios/Itau/Sistema_Cadastro_Conta_Cartao/Cadastro_Clientes/src/test/java/com/cadastro/cliente/api/application/controllers/SolicitacaoControllerTest.java
+/home/pedrofortini/Desafios/Itau/Sistema_Cadastro_Conta_Cartao/Cadastro_Clientes/src/test/java/com/cadastro/cliente/api/domain/cliente/converter/ClienteRequestConverterTest.java
+/home/pedrofortini/Desafios/Itau/Sistema_Cadastro_Conta_Cartao/Cadastro_Clientes/src/test/java/com/cadastro/cliente/api/domain/cliente/fixture/ClienteRequestFixture.java
+/home/pedrofortini/Desafios/Itau/Sistema_Cadastro_Conta_Cartao/Cadastro_Clientes/src/test/java/com/cadastro/cliente/api/domain/cliente/fixture/MensagemSolicitacaoCadastroClienteFixture.java
+/home/pedrofortini/Desafios/Itau/Sistema_Cadastro_Conta_Cartao/Cadastro_Clientes/src/test/java/com/cadastro/cliente/api/domain/mensagemsolicitacao/EnvioMensagemSolicitacaoCadastroServiceTest.java

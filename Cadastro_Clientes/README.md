@@ -6,6 +6,12 @@ The system also manages the creation of machines and users, and granting users a
 This repository holds both Frontend (in the app folder) and Backend (in the src folder) of the application. The Backend
 REST API was constructed using the **SpringBoot** framework, and the Frontend using the **React.js** library.  
 
+TOPICOS: 
+ - cadastro-conta-cartao-analise-documentos-topic
+ - cadastro-conta-cartao-analise-fraude-topic
+ - cadastro-conta-cartao-analise-credito-topic
+ - cadastro-conta-cartao-comunicacoes-topic
+
 ## Getting started
 
 ### Dependencies

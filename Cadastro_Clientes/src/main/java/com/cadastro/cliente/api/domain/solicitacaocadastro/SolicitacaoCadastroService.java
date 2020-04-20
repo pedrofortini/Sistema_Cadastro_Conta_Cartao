@@ -5,7 +5,7 @@ import com.cadastro.cliente.api.application.exception.PersistenceException;
 import com.cadastro.cliente.api.application.exception.RecursoNaoEncontradoException;
 import com.cadastro.cliente.api.application.util.DateUtil;
 import com.cadastro.cliente.api.domain.cliente.Cliente;
-import com.cadastro.cliente.api.infrastructure.persistence.SolicitacaoCadastroRepository;
+import com.cadastro.cliente.api.infrastructure.persistencia.SolicitacaoCadastroRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;

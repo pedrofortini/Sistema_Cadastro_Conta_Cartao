@@ -11,15 +11,7 @@ public class RecursoNaoEncontradoException extends RuntimeException {
      */
     private static final long serialVersionUID = 5613503359762451106L;
 
-    public RecursoNaoEncontradoException() {
-        super();
-    }
-
     public RecursoNaoEncontradoException(String message) {
         super(message);
-    }
-
-    public RecursoNaoEncontradoException(String message, Throwable cause) {
-        super(message, cause);
     }
 }

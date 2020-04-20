@@ -5,10 +5,9 @@ import com.cadastro.cliente.api.application.exception.PersistenceException;
 import com.cadastro.cliente.api.application.exception.RecursoNaoEncontradoException;
 import com.cadastro.cliente.api.application.util.DateUtil;
 import com.cadastro.cliente.api.domain.cliente.Cliente;
-import com.cadastro.cliente.api.domain.cliente.StatusContaCartao;
 import com.cadastro.cliente.api.domain.cliente.fixture.ClienteFixture;
 import com.cadastro.cliente.api.domain.cliente.fixture.SolicitacaoFixture;
-import com.cadastro.cliente.api.infrastructure.persistence.SolicitacaoCadastroRepository;
+import com.cadastro.cliente.api.infrastructure.persistencia.SolicitacaoCadastroRepository;
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.ArgumentCaptor;
@@ -22,7 +21,6 @@ import java.util.Optional;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
-import static org.junit.Assert.*;
 
 public class SolicitacaoCadastroServiceTest {
 

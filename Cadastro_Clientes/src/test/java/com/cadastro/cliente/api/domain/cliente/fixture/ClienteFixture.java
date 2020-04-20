@@ -2,7 +2,6 @@ package com.cadastro.cliente.api.domain.cliente.fixture;
 
 import com.cadastro.cliente.api.domain.cliente.Cliente;
 import com.cadastro.cliente.api.domain.cliente.StatusContaCartao;
-import io.swagger.model.ClienteRequest;
 
 public class ClienteFixture {
 

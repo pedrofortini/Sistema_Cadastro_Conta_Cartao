@@ -8,15 +8,7 @@ public class PersistenceException extends RuntimeException {
 
     private static final long serialVersionUID = 5613503359762451106L;
 
-    public PersistenceException() {
-        super();
-    }
-
     public PersistenceException(String message) {
         super(message);
-    }
-
-    public PersistenceException(String message, Throwable cause) {
-        super(message, cause);
     }
 }

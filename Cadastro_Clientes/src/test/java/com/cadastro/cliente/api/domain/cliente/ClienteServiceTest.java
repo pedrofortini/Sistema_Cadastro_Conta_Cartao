@@ -2,40 +2,37 @@ package com.cadastro.cliente.api.domain.cliente;
 
 import com.cadastro.cliente.api.application.exception.PersistenceException;
 import com.cadastro.cliente.api.application.exception.RecursoNaoEncontradoException;
-import com.cadastro.cliente.api.application.exception.UnprocessableEntityException;
 import com.cadastro.cliente.api.domain.cliente.fixture.ClienteFixture;
-import com.cadastro.cliente.api.domain.cliente.fixture.ClienteRequestFixture;
-import com.cadastro.cliente.api.domain.solicitacaocadastro.Solicitacao;
+import com.cadastro.cliente.api.domain.mensagemsolicitacao.EnvioMensagemSolicitacaoCadastroService;
 import com.cadastro.cliente.api.domain.solicitacaocadastro.SolicitacaoCadastroService;
-import com.cadastro.cliente.api.domain.solicitacaocadastro.StatusSolicitacao;
-import com.cadastro.cliente.api.infrastructure.persistence.ClienteRepository;
-import io.swagger.model.ClienteRequest;
+import com.cadastro.cliente.api.infrastructure.persistencia.ClienteRepository;
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.ArgumentCaptor;
 import org.mockito.Mockito;
 import org.powermock.api.mockito.PowerMockito;
 
-import java.util.Date;
 import java.util.Optional;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
-import static org.junit.Assert.*;
 
 public class ClienteServiceTest {
 
     private ClienteService service;
     private ClienteRepository clienteRepository;
     private SolicitacaoCadastroService solicitacaoCadastroService;
+    private EnvioMensagemSolicitacaoCadastroService envioMensagemSolicitacaoCadastroService;
 
     @Before
     public void setUp() {
 
         this.clienteRepository = PowerMockito.mock(ClienteRepository.class);
         this.solicitacaoCadastroService = PowerMockito.mock(SolicitacaoCadastroService.class);
+        this.envioMensagemSolicitacaoCadastroService = PowerMockito.mock(EnvioMensagemSolicitacaoCadastroService.class);
 
-        this.service = new ClienteService(this.clienteRepository, this.solicitacaoCadastroService);
+        this.service = new ClienteService(this.clienteRepository,
+                this.solicitacaoCadastroService, this.envioMensagemSolicitacaoCadastroService);
     }
 
     @Test
