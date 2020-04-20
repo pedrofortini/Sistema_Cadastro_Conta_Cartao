@@ -56,5 +56,5 @@ Os Microserviços de Análise de Documentos e Análise de Crédito não tem lóg
 Identifico as seguintes melhorias no projeto implementado:
 
 - Criação de testes unitários para os Microserviços de Análise Documentos, Fraude, Crédito e Comunicador.
-- Uso da validação de testes de mutação em todos os Microserviços ([PitTest](https://pitest.org}))
+- Uso da validação de testes de mutação em todos os Microserviços ([PitTest](https://pitest.org))
 - Uso do OAUTH2 e de tokens JWT para controle do acesso aos endpoints do Microserviço de Cadastro de Clientes.
